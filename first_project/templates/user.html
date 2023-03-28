@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block body_block %}
+    <div class="container">
+        <h1>Here are the Details of All Users!</h1>
+        {% if users%}
+            <ol>
+                {% for person in users%}
+                    <li>User Info</li>
+                    <ul>
+                        <li>{{ person.first_name}}</li>
+                        <li>{{ person.last_name}}</li>
+                        <li>{{ person.email}}</li>
+                    </ul>
+                {% endfor %}    
+            </ol>
+        {% endif %}    
+    </div>
+{% endblock %}
